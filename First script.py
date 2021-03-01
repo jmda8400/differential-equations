@@ -2,13 +2,13 @@ import numpy as np
 from gekko import GEKKO
 import matplotlib.pyplot as plt
 
-m = GEKKO()    # create GEKKO model
-k = m.Param()  # constant
-y = m.Var(5.0) # create GEKKO variable
-m.Equation(y.dt()==-k*y) # create GEKKO equation
-m.time = np.linspace(0,20) # time points
+m = GEKKO()    #Create GEKKO model
+k = m.Param()  #Constant
+y = m.Var(5.0) #Create GEKKO variable
+m.Equation(y.dt()==-k*y) #Create GEKKO equation
+m.time = np.linspace(0,20) #Time points
 
-# solve ODEs and plot
+#Solve ODEs and plot
 m.options.IMODE = 4
 m.options.TIME_SHIFT=0
 

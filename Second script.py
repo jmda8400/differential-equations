@@ -2,16 +2,16 @@ import numpy as np
 from gekko import GEKKO
 import matplotlib.pyplot as plt
 
-m = GEKKO()    # create GEKKO model
-y = m.Var(0) # create GEKKO variable
-m.Equation(y.dt()==-y+1) # create GEKKO equation
-m.time = np.linspace(0,20) # time points
+m = GEKKO()    #Create GEKKO model
+y = m.Var(0) #Create GEKKO variable
+m.Equation(y.dt()==-y+1) #Create GEKKO equation
+m.time = np.linspace(0,50) #Time points
 
-# solve ODE
+#Solve ODE
 m.options.IMODE = 4
 m.solve()
 
-# plot results
+#Plot results
 plt.plot(m.time,y)
 plt.xlabel('time')
 plt.ylabel('y(t)')
